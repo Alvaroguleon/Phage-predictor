@@ -1,4 +1,4 @@
-Phage
+Predictor for Phage Targeting 
 ==============================
 
 Prediction of gram positive or gram negative bacteriophage targets
