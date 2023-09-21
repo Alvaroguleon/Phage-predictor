@@ -3,7 +3,7 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
-
+import pandas as pd
 
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
@@ -14,7 +14,8 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
-
+    df = pd.read_csv("../data/raw/inphared_8Sep2023/8Sep2023_data.tsv", sep="\t")
+    df.rename(columns={'Isolation Host (beware inconsistent and nonsense values)': 'Isolation Host'}, inplace=True) 
 
 if __name__ == '__main__':
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
