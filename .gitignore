@@ -77,7 +77,9 @@ target/
 
 # exclude data from source control by default
 /data/raw/
-!/data/interim/
+/data/interim/feature_engineering/
+!/data/interim/discarded_phages.csv
+!/data/interim/gram_staining/
 !/data/processed/
 
 # Mac OS-specific storage files
