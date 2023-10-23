@@ -1,0 +1,120 @@
+"The number of entries per field is limited to 10 for this overview. If you want the whole information you can use the API or the ""Download selection"" menu on the Webpage."
+
+ID,designation_header,strain_number_header,is_type_strain_header,species,"Gram stain"
+2853,EBR-02E-0045,"DSM 19732, NBRC 101661, EBR 45",1,"Acetivibrio clariflavus",variable
+133505,ZJ-6,"CGMCC 1.7072, NBRC 104953",1,"Alicyclobacillus aeris",variable
+1241,C-11,"DSM 16731, JCM 9152, CIP 109021, FERM 3071",1,"Halalkalibacter hemicellulosilyticus",variable
+7516,Cr8-25,"DSM 23737, LMG 26215, JCM 18951",1,"Alpinimonas psychrophila",variable
+132587,CC-RT-E,"DSM 24738, BCRC 80314",1,"Ammoniphilus resinae",variable
+1408,JW/BP-GSL-QD,"DSM 23721, ATCC BAA 2118, NBRC 11149",1,"Amphibacillus cookii",variable
+140570,DY2726D,"JCM 30224, MCCC 1A00776",1,"Anaeromicrobium sediminis",variable
+11401,R-12870,"DSM 18919, CIP 108308, KCTC 13001, LMG 22483, Logan B-1599",1,"Aneurinibacillus terranovensis",variable
+554,R-16222,"DSM 15866, LMG 21881",1,"Anoxybacillus contaminans",variable
+132387,PDF4,"DSM 100115, NCCB 100559",1,"Brevibacillus gelatini",variable
+11437,R-12315,"DSM 18918, CIP 108307, KCTC 13000, LMG 22481, Logan B-1657",1,"Brevibacillus levickii",variable
+1222,AM-001,"DSM 16130, JCM 10596, CIP 109019",1,"Caldalkalibacillus mannanilyticus",variable
+2525,45B,"DSM 22065, CCUG 57396",1,"Caloramator boliviensis",variable
+23860,M2/40,"DSM 25664, CECT 8097, KCTC 15508",1,"Clostridium bornimense",variable
+158307,MJC39,"DSM 103944, JCM 31506",1,"Clostridium pabulibutyricum",variable
+134011,RLAHU4B,"LMG 27416, CECT 8236",1,"Cohnella lupini",variable
+133751,195,"ATCC BAA 2266, KCTC 15142",1,"Dehalococcoides mccartyi",variable
+11829,15,"DSM 17038, JCM 12923",1,"Desulfotruncus arcticus",variable
+17983,C/G2,"DSM 17477, JCM 13356, NBRC 101112",1,"Dethiosulfatibacter aminovorans",variable
+1210,NAF001,"DSM 15141, CIP 107128, JCM 11201, KCTC 3796",1,"Ectobacillus funiculus",variable
+4384,R18-2,"DSM 26271, CGMCC 1.10322, LMG 25706",1,"Enterobacter mori",variable
+18110,TF-16,"DSM 16306, KCTC 19035, CCUG 55590, CIP 108732, DSM 10306",1,"Exiguobacterium aestuarii",variable
+18111,TF-80,"DSM 16307, KCTC 19036, CIP 108731",1,"Exiguobacterium marinum",variable
+1218,R-13853,"DSM 15865, LMG 21880",1,"Fictibacillus gelatini",variable
+18081,S1,"DSM 4000, ATCC 29863, CCUG 28093, KCTC 5970, VPI 0310, JCM 32125, Prevot S1",1,"Flavonifractor plautii",variable
+166444,,"LMG 30814, CCUG 72425, UGent 06.41",1,"Gardnerella leopoldii",variable
+166443,,"LMG 30818, CCUG 72427, UGent 18.01",1,"Gardnerella piotii",variable
+166442,"GS 9838-1","LMG 30812, CCUG 72429",1,"Gardnerella swidsinskii",variable
+1757,594,"DSM 4944, ATCC 14018, CCUG 3717, NCTC 10915, NCTC 10287, LMG 7832, JCM 11026, BCRC 17040, CIP 70.74, KCTC 5096, LMG 14323",1,"Gardnerella vaginalis",variable
+133433,,"ATCC BAA 1630, CCUG 57045, WAL 1945J",1,"Gemella asaccharolytica",variable
+234,,"DSM 15739, CCUG 44365, CIP 107175, LMG 18844, GEM 604",1,"Globicatella sulfidifaciens",variable
+1256,B1761,"DSM 18845, CIP 107105, JCM 12212, KCTC 3846, LMG 18422",1,"Gottfriedia luciferensis",variable
+134280,ASL-17,"KCTC 13144, CCUG 54360, CIP 109718",1,"Halobacillus campisalis",variable
+1345,MSS-155,"DSM 16468, KCCM 41687, KCTC 3788",1,"Halobacillus locisalis",variable
+1354,ISL-50,"DSM 22302, CCUG 54358, KCTC 13145",1,"Halobacillus seohaensis",variable
+1346,MSS-402,"DSM 17110, KCTC 3957, JCM 12929",1,"Halobacillus yeomjeoni",variable
+141136,,"CECT 8745, IBRC-M 10233, CB Cb34",1,"Halorubrum halodurans",variable
+133550,JX313,"CGMCC 1.8909, NBRC 105739, JCM 18238",1,"Natronorubrum daqingense",variable
+782,MA-48,"DSM 2000, ATCC 43741, CCUG 26017, CIP 106933, LMG 7133",1,"Hydrogenibacillus schlegelii",variable
+1511,YKJ-13,"DSM 18867, CIP 107405, JCM 10872, KCCM 80002, CCM 7134, KCTC 13914",1,"Jeotgalibacillus alimentarius",variable
+1513,ASL-1,"DSM 23492, CCUG 56751, KCTC 13257, ASL -1",1,"Jeotgalibacillus salarius",variable
+133070,KNHs209,"DSM 100556, ATCC TSD-26",1,"Kineothrix alysoides",variable
+7332,"44C3, C44","DSM 18031, ATCC BAA 1524, JCM 16542",1,"Klugiella xanthotipulae",variable
+1359,SF-20,"DSM 16425, CIP 107807, JCM 11462, KCCM 41560, ATCC BAA 719, CGMCC 1.3447, CGMCC 1.6154",1,"Lentibacillus salicampi",variable
+1542,1741-1b,"DSM 54, ATCC 12905, LMG 18474, SAG 1741-1b, JCM 21742, IAM 15292, LMG 18473",1,"Lysinibacillus macroides",variable
+1257,B1724,"DSM 18868, CIP 107762, KCTC 13003, LMG 18435",1,"Margalitia shackletonii",variable
+140620,NC2-42,"KCTC 33676, MCCC 1K01238",1,"Marinicrinis sediminis",variable
+17127,FM1025,"DSM 19944, CIP 109788",1,"Megamonas rupellensis",variable
+1250,YKJ-10,"DSM 18226, CIP 107104, JCM 10885, KCCM 41040, BCRC 20126, CCM 7133, CGMCC 1.3651, KCTC 3839",1,"Mesobacillus jeotgali",variable
+1223,JG-30,"DSM 16189, KCTC 3880, BCRC 80033, CIP 108730",0,"Metabacillus indicus",variable
+1228,SW-211,"DSM 16303, KCTC 3898, CIP 108971",1,"Metabacillus litoralis",variable
+24327,ISL-41,"DSM 27642, CCUG 56756, KCTC 13261, ISL -41",1,"Metaplanococcus flavidus",variable
+6951,Mic6c05,"DSM 21974, NBRC 105197",1,"Methanobacterium ferruginis",variable
+6952,Mic5c12,"DSM 22353, NBRC 105198",1,"Methanobacterium petrolearium",variable
+131756,8Ac,"DSM 17206, CGMCC 1.5026, NBRC 104789",1,"Methanothrix harundinacea",variable
+10626,J81,"DSM 44463, CIP 109234, NRRL B-24424, JCM 13999, BCRC 16840, IFM 10694, NBRC 105863",1,"Millisia brevis",variable
+208,BV345-16,"DSM 23059, ATCC 35241, CCUG 21018, NCTC 11656",1,"Mobiluncus curtisii subsp. curtisii",variable
+209,"BV376-6, Spiegel BV376-6","DSM 21655, ATCC 35242, CCUG 17762, LMG 7786, NCTC 11657",1,"Mobiluncus holmesii",variable
+24068,CG-1,"DSM 25473, CECT 7984, IBRC-M 10656, JCM 17958",1,"Natronococcus roseus",variable
+1214,"IDA 1115, R-16315","DSM 15601, CIP 108807, LMG 21833, JCM 21706, IAM 15255",1,"Neobacillus bataviensis",variable
+1213,"IDA 1937, R-16337","DSM 15600, CIP 108808, LMG 21831, JCM 21707, IAM 15256, NBRC 102427",1,"Neobacillus drentensis",variable
+1217,"IDA 0086, R-16300","DSM 15604, CIP 108804, LMG 21838, JCM 21710, IAM 15259, KCTC 13572, NBRC 102451",1,"Neobacillus soli",variable
+11114,KSL-17,"DSM 16315, KCTC 19039, JCM 14046",1,"Nocardioides lentus",variable
+23736,CHL-21,"DSM 27649, CCUG 56608, KCTC 13253",1,"Oceanobacillus locisalsi",variable
+24116,"ACB7, HM-482","DSM 24638, ATCC BAA 2639, KCTC 15511",1,"Oribacterium asaccharolyticum",variable
+24115,"ACB1, HM-481","DSM 24637, ATCC BAA 2638, KCTC 15512",1,"Oribacterium parvum",variable
+134087,20CM,"LMG 22078, CECT 5836",1,"Paenibacillus antarcticus",variable
+11634,Ch-32,"DSM 19417, CECT 7279",1,"Paenibacillus castaneae",variable
+132384,C4-5,"DSM 100100, KCTC 33652",1,"Paenibacillus cavernae",variable
+133429,CKOBP-6,"BCRC 17728, LMG 24216",1,"Paenibacillus contaminans",variable
+11561,AP-20,"DSM 15491, JCM 11236, KCTC 3745, BCRC 17345, CIP 107805",1,"Paenibacillus daejeonensis",variable
+11607,"LGC-32714SD17, SD17","DSM 22254, CIP 108552, KCTC 10016BP, NBRC 100335",1,"Paenibacillus elgii",variable
+11588,GMP01,"DSM 17253, CECT 5760, LMG 20987",1,"Paenibacillus favisporus",variable
+11625,ZL,"DSM 21315, BCRC 17579, LMG 23577",1,"Paenibacillus fonticola",variable
+133207,AMTAE16,"LMG 29501, CECT 9124",1,"Paenibacillus hispanicus",variable
+11608,SG,"DSM 22253, JCM 12520, KCTC 3919",1,"Paenibacillus hodogayensis",variable
+11563,"MB 1871, R-7191","DSM 15596, CIP 108827, LMG 21940",1,"Paenibacillus lactis",variable
+140459,Agd-32,"BCRC 80902, KCTC 33691, LMG 28836",1,"Paenibacillus lacus",variable
+158601,CJ6,"KACC 19303, JCM 32079",1,"Paenibacillus limicola",variable
+11609,C/2,"DSM 19248, CCM 4839, LMG 23002",1,"Paenibacillus mendelii",variable
+140866,PM10,"LMG 28691, CECT 8827",1,"Paenibacillus periandrae",variable
+11589,,"DSM 17399, CECT 5862, LMG 22192, PALXIL 04",1,"Paenibacillus phyllosphaerae",variable
+11649,PW21,"DSM 22405, CECT 7506, LMG 25259",1,"Paenibacillus prosopidis",variable
+11651,"MC-246, rec-246","DSM 22072, CCUG 57263",1,"Paenibacillus residui",variable
+159374,7197,"DSM 103168, CGMCC 1.15699",1,"Paenibacillus rhizophilus",variable
+133620,WPCB173,"KCTC 13282, JCM 16352, LMG 31321, DSM 25278",1,"Paenibacillus rigui",variable
+24281,,"DSM 28159, CCGB 1313, CECT 7330, SBR 5",0,"Paenibacillus sonchi",variable
+11650,,"DSM 22699, KCTC 13252, KIT 00200-70066-1",1,"Paenibacillus sputi",variable
+11626,V10537,"DSM 19942, BCRC 17757, CIP 110615",1,"Paenibacillus taichungensis",variable
+11604,,"DSM 18679, IAM 15414, LMG 23799, BCRC 17411, JCM 23198, CIP 109674, KCTC 13628",1,"Paenibacillus taiwanensis",variable
+11629,YB-45,"DSM 16971, CIP 110595, KCTC 3953",1,"Paenibacillus woosongensis",variable
+158762,,"IBRCM 10987, LMG 29451, AS 7",1,"Paenibacillus xanthanilyticus",variable
+11971,JG-07,"DSM 15895, CIP 107134, JCM 10704, KCTC 3684, CGMCC 1.3646",1,"Planococcus koreensis",variable
+140686,CW1,"CCTCC AB 207187, LMG 24442",1,"Planococcus ruber",variable
+1208,mcha2343,"DSM 14890, CIP 108363, LMG 19507",1,"Pseudalkalibacillus decolorationis",variable
+1226,SW-72,"DSM 16206, JCM 11807, KCCM 41641, CIP 108441, LMG 24749",1,"Pseudalkalibacillus hwajinpoensis",variable
+133081,AK20-18,"DSM 102047, LMG 29369",1,"Psychromicrobium silvestre",variable
+1225,TF-12,"DSM 16205, JCM 11545, KCCM 41589, CIP 108136",1,"Rossellomorea aquimaris",variable
+24503,MA1-6,"DSM 27839, CCUG 60744, KCTC 23463",1,"Ruegeria halocynthiae",variable
+2567,Cc,"DSM 1351, ATCC 15832, NCIMB 10669, JCM 1422, LMG 5589, BCRC 14495, KCTC 15225, KCTC 3044, VPI 3359",1,"Ruminiclostridium cellobioparum subsp. cellobioparum",variable
+11667,GR21,"DSM 19268, LMG 24085",1,"Saccharibacillus sacchari",variable
+1551,ISL-25,"DSM 23127, CCUG 56755, KCTC 13260, ISL -25",1,"Salimicrobium flavidum",variable
+23072,HM-480,"DSM 24645, ACC 2",1,"Stomatobaculum longum",variable
+16690,OL-4,"DSM 17840, JCM 13948",1,"Syntrophomonas zehnderi",variable
+159743,G27,"MCC 3411, CGMCC 1.15772, KCTC 33941, KCTC 43224",1,"Thalassorhabdus alkalitolerans",variable
+18043,KW1,"DSM 17372, JCM 13210",1,"Thermaerobacter litoralis",variable
+18040,7p75a,"DSM 12885, JCM 10246, ATCC 700841",1,"Thermaerobacter marianensis",variable
+16847,JW/IW-010,"DSM 18761, ATCC BAA 1464",1,"Thermoanaerobacter uzonensis",variable
+1491,ISL-24,"DSM 23507, CCUG 56754, KCTC 13259, ISL -24",1,"Virgibacillus byunsanensis",variable
+1496,IDS-20,"DSM 25790, CCUG 59308, KCTC 13727",1,"Virgibacillus alimentarius",variable
+1484,DSW-10,"DSM 16826, CIP 109001, KCTC 3933",1,"Virgibacillus dokdonensis",variable
+132443,S1-20,"DSM 29015, LMG 28381",1,"Virgibacillus flavescens",variable
+158739,P2-C2,"CGMCC 1.16138, NBRC 113014",1,"Virgibacillus indicus",variable
+159776,P3-H5,"CGMCC 1.16139, NBRC 113015",1,"Virgibacillus profundi",variable
+1494,CC-YMP-6,"DSM 22952, CCM 7714, CCUG 58580",1,"Virgibacillus soli",variable
+571,R-17170,"DSM 16319, LMG 22166",1,"Viridibacillus arenosi",variable
+570,R-16993,"DSM 16317, LMG 22165",1,"Viridibacillus arvi",variable
