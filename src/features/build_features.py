@@ -167,8 +167,11 @@ def main():
 
     parser.add_argument("-g", "--genbank", type=str, required=True,
                         help="Path to genbank file of the entry.")
-    optional.add_argument("-s","--staining", dest="staining", action='store', default='data/interim/gram_staining/staining_assignation.csv', help="Path to csv file with a customised gram staining class assignation for every entry.")
-    optional.add_argument("-o","--output_direcotry", dest="output", action='store', default='data/processed/model_data2.csv', help="Output path (default: data/processed/model_data.csv).")
+    optional.add_argument("-s","--staining", dest="staining", action='store', 
+                          default='data/interim/gram_staining/staining_assignation.csv', 
+                          help="Path to csv file with a customised gram staining class assignation for every entry.")
+    optional.add_argument("-o","--output_direcotry", dest="output", action='store', 
+                          default='data/processed/model_data2.csv', help="Output path (default: data/processed/model_data.csv).")
 
     args = parser.parse_args()
 

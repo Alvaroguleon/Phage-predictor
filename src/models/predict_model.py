@@ -69,7 +69,7 @@ output_df = pd.DataFrame({
 })
 
 # Uncomment the following line if you want to save the output to a CSV
-output_df.to_csv('args.output', index=False)
+output_df.to_csv(args.output, index=False)
 
 print()
 print(f"The output has been saved in {args.output}. The first 5 entries are: ")

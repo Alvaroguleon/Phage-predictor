@@ -78,7 +78,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 rf = RandomForestClassifier()
 rf.fit(X_train, y_train)
 
-print("Saving model...")
+
 # save model
 pickle.dump(rf, open(args.output, "wb"))
 
@@ -137,7 +137,9 @@ Matthews Correlation Coefficient Details: {mcc_details}
 with open(args.report, "w") as report_file:
     report_file.write(report_str)
 
-print(report_str) 
+print(classification_report_str) 
 
 
 
+print(f"The model was saved in {args.output}")
+print(f"The full report was saved in {args.report}")
