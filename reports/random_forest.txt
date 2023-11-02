@@ -1,0 +1,25 @@
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.98      0.96      1609
+           1       0.95      0.86      0.90       622
+
+    accuracy                           0.95      2231
+   macro avg       0.95      0.92      0.93      2231
+weighted avg       0.95      0.95      0.95      2231
+
+
+Accuracy: 0.9484536082474226
+Balanced Accuracy: 0.92037703912278
+Log Loss: 0.1508502335785368
+Mean Squared Error: 0.05154639175257732
+F1 Score: 0.9026248941574936
+Matthews Correlation Coefficient: 0.8699978042525126
+Matthews Correlation Coefficient Details:  
+     P: 622 
+     Tp: 533 
+     Fp: 26 
+     N: 1_609 
+     Tn: 1_583 
+     Fn: 89
