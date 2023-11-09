@@ -46,7 +46,7 @@ optional = parser._action_groups.pop()
 required = parser.add_argument_group('required arguments')
 # optional.add_argument("-d", "--data", type=str, required=True,
 #                     help="Path to the data to use in the model (csv).")
-optional.add_argument("-d","--data", dest="data", action='store', default='data/processed/model_data.csv', help="Path to the data to use in the model (default: data/processed/model_csv).")
+optional.add_argument("-d","--data", dest="data", action='store', default='data/processed/model_data_pharokka.csv', help="Path to the data to use in the model (default: data/processed/model_data_pharokka.csv).")
 optional.add_argument("-o","--output_directory", dest="output", action='store', default='models/random_forest.pkl', help="Output path for the model (default: models/random_forest.pkl).")
 optional.add_argument("-r","--report", dest="report", action='store', default='reports/training_random_forest.txt', help="Output path for the model (default: reports/training_random_forest.txt).")
 
@@ -57,10 +57,20 @@ print("--- Initiating training of the model ---")
 df = pd.read_csv(args.data, index_col=0)
 
 # Features (independent variables)
-features = ['genome_length', 'jumbophage', 'gc_%',
-       'trna_count', 'cds_number', 'coding_capacity', 'positive_strand_%',
-       'negative_strand_%', 'molecule_type_ss-DNA', 'molecule_type_DNA',
-       'molecule_type_RNA', 'molecule_type_ss-RNA', 'topology_circular','topology_linear']
+features = ['genome_length_inphared', 'gc_%_inphared',
+        'cds_number_inphared', 'positive_strand_%_inphared',
+        'negative_strand_%_inphared', 'coding_capacity_inphared',
+        'molecule_type_inphared_DNA', 'topology_inphared_linear',
+        'jumbophage_inphared', 'topology_linear_inphared',
+        'topology_circular_inphared', 'molecule_inphared_type_ss-DNA',
+        'molecule_inphared_type_DNA', 'molecule_inphared_type_RNA',
+        'molecule_inphared_type_ss-RNA', 'length', 'gc_perc',
+        'transl_table', 'cds_coding_density', 'CARD_AMR_Genes',
+        'CDS', 'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
+        'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
+        'nucleotide_metabolism', 'other', 'tRNAs', 'tail', 'tmRNAs',
+        'transcription', 'unkown_function', 'frame_negative',
+        'frame_positive'] # removed sequence and complement sequence
 
 # Target variable (dependent variable)
 target = 'staining'
@@ -69,6 +79,7 @@ target = 'staining'
 X = df[features]
 y = df[target]
 
+print(X)
 #TODO: Change it to introduce homology partitioning
 
 # Split the data into training and testing sets (80% train, 20% test)

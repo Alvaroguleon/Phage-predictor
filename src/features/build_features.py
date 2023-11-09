@@ -3,6 +3,8 @@ from Bio import SeqIO
 from Bio.SeqFeature import FeatureLocation
 from Bio.Seq import UndefinedSequenceError
 import argparse
+import os
+import subprocess
 
 def engineer_features(folder):
     # Lists to hold data
@@ -263,28 +265,72 @@ def staining_feature(staining_df, features_df):
     return features_df
 
 def main():
-    parser = argparse.ArgumentParser(description="Load a trained model from a given path.")
+    parser = argparse.ArgumentParser(description="Process raw data (filtered data with only valid phage) into features to train a model.")
     optional = parser._action_groups.pop()
     required = parser.add_argument_group('required arguments')
-
-    parser.add_argument("-g", "--genbank", type=str, required=True,
-                        help="Path to genbank file of the entry.")
+    parser.add_argument("-d", "--data", type=str, required=True,
+                        help="Path to the data. Accepted inputs are FASTA files for Pharokka inputs or a directory path to an already processed Pharokka output.\
+                            If the input is a FASTA file, the Pharokka output will be stored locally.")
     optional.add_argument("-s","--staining", dest="staining", action='store', 
                           default='data/interim/gram_staining/staining_assignation.csv', 
                           help="Path to csv file with a customised gram staining class assignation for every entry.")
-    optional.add_argument("-o","--output_direcotry", dest="output", action='store', 
-                          default='data/processed/model_data2.csv', help="Output path (default: data/processed/model_data.csv).")
-
+    optional.add_argument("-o","--output_directory", dest="output", action='store', 
+                          default='data/processed/model_data_pharokka.csv', help="Output path (default: data/processed/model_data_pharokka.csv).")
+    optional.add_argument("-p","--pharokka_directory", dest="pharokka", action='store', 
+                          default="/mnt/c/Users/Alvaro/Desktop/pharokka_output/", help="Path where pharokka output will be stored (default: /mnt/c/Users/Alvaro/Desktop/pharokka_output/).")
+    optional.add_argument("-b","--database_directory", dest="database", action='store', 
+                          default="/mnt/c/Users/Alvaro/Desktop/pharokka_database/", help="Path to the Pharokka database (default./mnt/c/Users/Alvaro/Desktop/pharokka_database/).")
     args = parser.parse_args()
 
-    # The genbank file input should be the output of pharokka 
+    '''
+    Possible inputs:
+    - Pharokka output
+    - Fasta file on which to build pharokka output
 
-    print("Reading the genbank file...")
-    features_df = engineer_features(args.genbank)
+    This output will be the input for the engineer features and staining feature, and its
+    output is stored in args.output. This output is used by train_model for training
+    '''
+    fasta_extensions = ["fasta", "fas", "fa", "fna", "ffn", "faa", "mpfa", "frn"]
 
-    features_df = staining_feature(args.staining, features_df)
+    def unix_call(command, environment=None):
+        if environment:  # If the environment is specified, prepend with 'conda run -n env_name'
+            command = f"conda run -n {environment} {command}"
+        subprocess.run(command, shell=True, check=True)  
 
-    features_df.to_csv(args.output, index = False)
+    def process_fasta(file_path, output_dir, database_dir):
+        # Create the output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+        print(f"Processing FASTA file: {file_path}")
+
+        # Run Pharokka using the pharokkaENV environment
+        unix_call(f'pharokka.py -i {file_path} -o {output_dir} -f -m -t 16 -d {database_dir}', environment='pharokkaENV')
+
+        
+    # Check if the input data path is a directory or a file
+    if os.path.isdir(args.data):
+        # The input is a directory; process all relevant files within
+        print(f"Processing Pharokka output in directory: {args.data}")
+        model_data = engineer_features(args.data)
+
+    elif os.path.isfile(args.data):
+        # The input is a file; check if it's a FASTA file
+        file_ext = os.path.splitext(args.data)[1][1:].lower()
+        if file_ext in fasta_extensions:
+            process_fasta(args.data, args.pharokka, args.database) 
+
+            # The input is a directory; process all relevant files within
+            print(f"Processing Pharokka output in directory: {args.pharokka}")
+            model_data = engineer_features(args.pharokka)
+
+        else:
+            print(f"Unsupported file format: {file_ext}. Supported FASTA formats are: {', '.join(fasta_extensions)}")
+            exit(1)
+
+
+    model_data = staining_feature(args.staining, model_data)
+
+    model_data.to_csv(args.output, index = False)
+    
     print(f"Processed data has been stored in {args.output}")
 
 if __name__ == "__main__":
