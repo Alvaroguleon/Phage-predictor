@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description="Make a gram staining prediction fo
 optional = parser._action_groups.pop()
 required = parser.add_argument_group('required arguments')
 parser.add_argument("-d", "--data", type=str, required=True,
-                    help="Path to the data to be predicted.")
+                    help="Path to the data to be predicted. Accepted inputs are FASTA files for Pharokka inputs or a directory path to an already processed Pharokka output.")
 optional.add_argument("-m","--model_path", dest="model", action='store', default="models/random_forest.pkl", 
                       help="Path to the trained model file (default: models/random_forest.pkl).")
 
@@ -17,36 +17,55 @@ optional.add_argument("-o","--output_directory", dest="output", action='store', 
 args = parser.parse_args()
 
 print("--- Initiating prediction of the input data ---")
-
-# Extract the file extension
-file_ext = os.path.splitext(args.data)[1][1:] 
-
 fasta_extensions = ["fasta", "fas", "fa", "fna", "ffn", "faa", "mpfa", "frn"]
-genbank_extensions = ["gb", "gbk"]
 
-# Processing the input data --------
 
-#TODO: pharokka
-# Process as a FASTA file
-if file_ext in fasta_extensions:
-    pass  # Replace PHAROKKA
+# Function to process a single FASTA file
+def process_fasta(file_path):
+    # Replace with your code to process the FASTA file
+    print(f"Processing FASTA file: {file_path}")
+    #TODO: PHAROKKA
 
- # Process as a GenBank file
-elif file_ext in genbank_extensions:
+# Check if the input data path is a directory or a file
+if os.path.isdir(args.data):
+    # The input is a directory; process all relevant files within
+    print(f"Processing Pharokka output in directory: {args.data}")
     model_data = engineer_features(args.data)
 
+elif os.path.isfile(args.data):
+    # The input is a file; check if it's a FASTA file
+    file_ext = os.path.splitext(args.data)[1][1:].lower()
+    if file_ext in fasta_extensions:
+        process_fasta(args.data)  # Call your processing function
+    else:
+        print(f"Unsupported file format: {file_ext}. Supported FASTA formats are: {', '.join(fasta_extensions)}")
+        exit(1)
+
 else:
-    supported_formats = ', '.join(fasta_extensions + genbank_extensions)
-    print(f"Unsupported file format: {file_ext}. Supported formats are: {supported_formats}")
+    print(f"The provided data path does not exist: {args.data}")
     exit(1)
 
 
-features = ['genome_length', 'jumbophage', 'gc_%',
-       'trna_count', 'cds_number', 'coding_capacity', 'positive_strand_%',
-       'negative_strand_%', 'molecule_type_ss-DNA', 'molecule_type_DNA',
-       'molecule_type_RNA', 'molecule_type_ss-RNA', 'topology_circular','topology_linear']
+features = ['genome_length_inphared', 'gc_%_inphared',
+        'cds_number_inphared', 'positive_strand_%_inphared',
+        'negative_strand_%_inphared', 'coding_capacity_inphared',
+        'molecule_type_inphared_DNA', 'topology_inphared_linear',
+        'jumbophage_inphared', 'topology_linear_inphared',
+        'topology_circular_inphared', 'molecule_inphared_type_ss-DNA',
+        'molecule_inphared_type_DNA', 'molecule_inphared_type_RNA',
+        'molecule_inphared_type_ss-RNA', 'length', 'gc_perc',
+        'transl_table', 'cds_coding_density', 'CARD_AMR_Genes',
+        'CDS', 'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
+        'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
+        'nucleotide_metabolism', 'other', 'tRNAs', 'tail', 'tmRNAs',
+        'transcription', 'unkown_function', 'frame_negative',
+        'frame_positive', 'sequence_inphared', 'reverse_complement_inphared']
+
 model_data = model_data.set_index(model_data.columns[0])
+
+
 model_data = model_data[features]
+
 
 # Making the prediction -----
 
