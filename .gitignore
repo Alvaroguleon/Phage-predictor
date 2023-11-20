@@ -83,6 +83,7 @@ target/
 /data/interim/pharokka/
 /data/processed/model_data2.csv
 /data/processed/model_data_test.csv
+/data/processed/engineered_features.csv
 /data/processed/model_data_pharokka.csv
 /data/external/pharokka_database/
 !/data/interim/discarded_phages.csv
