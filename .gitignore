@@ -81,6 +81,7 @@ target/
 /data/interim/clustering/
 /data/interim/genbank_engineering/genbank_filtered_model_entries.gb
 /data/interim/pharokka/
+/data/processed/
 /data/processed/model_data2.csv
 /data/processed/model_data_test.csv
 /data/processed/engineered_features.csv
