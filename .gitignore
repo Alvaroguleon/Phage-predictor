@@ -87,6 +87,9 @@ target/
 /data/processed/engineered_features.csv
 /data/processed/model_data_pharokka.csv
 /data/external/pharokka_database/
+/data/test/discarded.csv
+/data/test/test_engineer_features.csv
+/data/test/features_with_gram_class.csv*
 !/data/interim/discarded_phages.csv
 !/data/interim/gram_staining/
 

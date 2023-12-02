@@ -67,19 +67,16 @@ else:
 
 
 features = ['genome_length_inphared', 'gc_%_inphared',
-        'cds_number_inphared', 'positive_strand_%_inphared',
-        'negative_strand_%_inphared', 'coding_capacity_inphared',
-        'molecule_type_inphared_DNA', 'topology_inphared_linear',
-        'jumbophage_inphared', 'topology_linear_inphared',
-        'topology_circular_inphared', 'molecule_inphared_type_ss-DNA',
-        'molecule_inphared_type_DNA', 'molecule_inphared_type_RNA',
-        'molecule_inphared_type_ss-RNA', 'length', 'gc_perc',
-        'transl_table', 'cds_coding_density', 'CARD_AMR_Genes',
-        'CDS', 'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
-        'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
-        'nucleotide_metabolism', 'other', 'tRNAs', 'tail', 'tmRNAs',
-        'transcription', 'unkown_function', 'frame_negative',
-        'frame_positive'] 
+       'cds_number_inphared', 'positive_strand_%_inphared',
+       'negative_strand_%_inphared', 'coding_capacity_inphared',
+       'tRNAs_inphared', 'molecule_inphared_type_DNA', 'topology_linear', 'jumbophage_inphared',
+       'topology_circular', 'molecule_inphared_type_ss-DNA',
+       'molecule_inphared_type_RNA', 'molecule_inphared_type_ss-RNA', 'length',
+       'gc_perc', 'transl_table', 'cds_coding_density', 'CARD_AMR_Genes',
+       'CDS', 'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
+       'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
+       'nucleotide_metabolism', 'other', 'tRNAs', 'tail', 'tmRNAs',
+       'transcription', 'unkown_function', 'frame_positive', 'frame_negative']
 
 model_data = model_data.set_index(model_data.columns[0])
 
