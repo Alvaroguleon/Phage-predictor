@@ -180,4 +180,4 @@ with warnings.catch_warnings():
     plt.savefig("reports/" + 'histogram_plot.png')
     plt.close()
 
-# python -m src.models.predict_model -d data/interim/genbank_engineering/50_sequences.gb
+# python -m src.models.predict_model -d /mnt/c/Users/Alvaro/Desktop/projects/phage/data/test/discarded.csv
