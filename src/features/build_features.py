@@ -203,16 +203,6 @@ def engineer_features(folder):
        'transcription', 'unkown_function', 'frame_positive',
        'frame_negative', 'sequence']
     
-    columns = ['id','host_inphared','isolation_host_inphared','genome_length_inphared', 'gc_%_inphared',
-       'cds_number_inphared', 'positive_strand_%_inphared',
-       'negative_strand_%_inphared', 'coding_capacity_inphared',
-       'tRNAs_inphared', 'cds_coding_density','jumbophage_inphared', 'topology_linear', 
-       'topology_circular', 'transl_table',  'CARD_AMR_Genes',
-       'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
-       'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
-       'nucleotide_metabolism', 'other', 'tail', 'tmRNAs',
-       'transcription', 'unkown_function', 'frame_positive', 'frame_negative', 
-       'molecule_inphared_type_DNA',  'molecule_inphared_type_ss-DNA', 'sequence']
 
     df = df[columns]
     return df
@@ -267,9 +257,9 @@ def main():
         
     # Check if the input data path is a directory or a file
     if os.path.isdir(args.data):
-        # The input is a directory; process all relevant files within
-        print(f"Processing Pharokka output in directory: {args.data}")
-        model_data = engineer_features(args.data)
+        print(f"Processing Pharokka phages in directory: {args.data}")
+        process_pharokka_output(args.data, args.output)
+        
 
     elif os.path.isfile(args.data):
         # The input is a file; check if it's a FASTA file
@@ -285,7 +275,7 @@ def main():
             print(f"Unsupported file format: {file_ext}. Supported FASTA formats are: {', '.join(fasta_extensions)}")
             exit(1)
 
-
+    model_data = pd.read_csv(args.output)
     model_data = staining_feature(args.staining, model_data)
 
     model_data.to_csv(args.output, index = False)
