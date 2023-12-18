@@ -6,6 +6,30 @@ import argparse
 import os
 import subprocess
 
+def process_pharokka_output(args_data, output_csv):
+    # Check if output CSV file exists, if not create it
+    if not os.path.exists(output_csv):
+        with open(output_csv, 'w') as f:
+            pass
+
+    # Iterate over each folder in the main folder
+    for folder in os.listdir(args_data):
+        folder_path = os.path.join(args_data, folder)
+
+        # Check if the path is a directory
+        if os.path.isdir(folder_path):
+            # Check if "pharokka.gbk" file exists in the folder
+            if "pharokka.gbk" in os.listdir(folder_path):
+                print(f"Processing {folder_path}...")
+                # Pass the full path of "pharokka.gbk" to your function and get the dataframe
+                df = engineer_features(folder_path)
+
+                # Append the dataframe to the CSV file
+                with open(output_csv, 'a') as f:
+                    df.to_csv(f, header=f.tell()==0, index=False)
+            else:
+                print(f"Skipped {folder_path}: 'pharokka.gbk' file not found or not a directory")
+
 def engineer_features(folder):
     # Read data from the TSV file
     df = pd.read_csv(f'{folder}/pharokka_top_hits_mash_inphared.tsv', sep='\t')
@@ -179,6 +203,16 @@ def engineer_features(folder):
        'transcription', 'unkown_function', 'frame_positive',
        'frame_negative', 'sequence']
     
+    columns = ['id','host_inphared','isolation_host_inphared','genome_length_inphared', 'gc_%_inphared',
+       'cds_number_inphared', 'positive_strand_%_inphared',
+       'negative_strand_%_inphared', 'coding_capacity_inphared',
+       'tRNAs_inphared', 'cds_coding_density','jumbophage_inphared', 'topology_linear', 
+       'topology_circular', 'transl_table',  'CARD_AMR_Genes',
+       'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
+       'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
+       'nucleotide_metabolism', 'other', 'tail', 'tmRNAs',
+       'transcription', 'unkown_function', 'frame_positive', 'frame_negative', 
+       'molecule_inphared_type_DNA',  'molecule_inphared_type_ss-DNA', 'sequence']
 
     df = df[columns]
     return df
@@ -189,21 +223,6 @@ def staining_feature(staining_df, features_df):
     stain = stain.rename(columns={'Accession': 'id'})
 
     features_df = pd.merge(features_df, stain, on='id', how='left')
-    # columns = ['id','staining','host_inphared','isolation_host_inphared','genome_length_inphared', 'gc_%_inphared', 'cds_number_inphared',
-    #    'positive_strand_%_inphared', 'negative_strand_%_inphared',
-    #    'coding_capacity_inphared', 'tRNAs_inphared', 'host_inphared',
-    #    'isolation_host_inphared', 'molecule_inphared_type_DNA',
-    #    'topology_linear', 'jumbophage_inphared', 'topology_circular',
-    #    'molecule_inphared_type_ss-DNA', 'molecule_inphared_type_RNA',
-    #    'molecule_inphared_type_ss-RNA',  'length', 'gc_perc',
-    #    'transl_table', 'cds_coding_density',  'CARD_AMR_Genes',
-    #    'CDS', 'CRISPRs', 'VFDB_Virulence_Factors', 'connector',
-    #    'head_packaging', 'host_takeover', 'integration and excision', 'lysis',
-    #    'nucleotide_metabolism', 'other', 'tRNAs', 'tail', 'tmRNAs',
-    #     #'contig_x', 'contig', 'contig_y',
-    #    'transcription', 'unkown_function', 'frame_positive',
-    #    'frame_negative', 'sequence']
-
 
     return features_df
     
